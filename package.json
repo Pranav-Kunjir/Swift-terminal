@@ -1,0 +1,41 @@
+{
+  "name": "swfit-terminal",
+  "productName": "Swift-Terminal",
+  "version": "1.0.0",
+  "description": "An ai terminal that takes in prompt and give back commands to run in console",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pranav-Kunjir/Swfit-terminal.git"
+  },
+  "keywords": [],
+  "author": "Pranav Kunjir",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Pranav-Kunjir/Swfit-terminal/issues"
+  },
+  "homepage": "https://github.com/Pranav-Kunjir/Swfit-terminal#readme",
+  "devDependencies": {
+    "@electron/packager": "^18.3.6",
+    "electron": "^35.0.3",
+    "electron-builder": "^26.0.12",
+    "electron-forge": "^5.2.4"
+  },
+  "dependencies": {
+    "@google/genai": "^0.6.1",
+    "@google/generative-ai": "^0.24.0",
+    "@xterm/xterm": "^5.5.0",
+    "dotenv": "^16.4.7",
+    "keytar": "^7.9.0",
+    "node-pty": "^1.1.0-beta33"
+  },
+  "built": {
+    "appId": "com.github.PranavKunjir"
+  }
+}

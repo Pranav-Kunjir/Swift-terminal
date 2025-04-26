@@ -1,0 +1,230 @@
+*{
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Ubuntu Mono", monospace;
+
+}
+
+#terminal{
+    color: white;
+    user-select: text; /* Or user-select: auto; */
+       -webkit-user-select: text; /* For older browsers */
+       -moz-user-select: text;
+       -ms-user-select: text;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-rows: 1fr; /* Single row */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    gap: 0; /* No gap between columns */
+}
+.terminal {
+    overflow: hidden;
+}
+.aiprompt {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputs{
+    margin-top: 4vh;
+    position : fixed;
+    bottom : 1vh;
+}
+.inputs input{
+    width: 75vh;
+    margin-left: 2vh;
+    text-align: center;
+    height: 5vh;
+    border-radius: 20px;
+    background-color: #3b4252;
+    color: white;
+    z-index: 999;
+}
+.inputs input ::placeholder {
+    color: white;
+  }
+
+.chat{
+    /* margin-bottom: 9vh; */
+}
+.user_chat {
+    background-color: #0078d4; /* Blue background for user messages */
+    color: #ffffff;
+    align-self: flex-end; /* Align to the right */
+    padding: 8px 12px;
+    border-radius: 12px 12px 0 12px;
+    max-width: max-content; /* Make background wrap around text */
+    font-size: 14px;
+    word-wrap: break-word;
+    margin-top:3vh ;
+
+}
+
+.aichat {
+    margin-top:3vh ;
+    background-color: #333333; /* Dark gray for AI messages */
+    color: #ffffff;
+    align-self: flex-start; /* Align to the left */
+    padding: 8px 12px;
+    border-radius: 12px 12px 12px 0;
+    margin-right: 3vh;
+    max-width: max-content; /* Make background wrap around text */
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+
+/* Optional: Smooth transition */
+.user_chat, .ai_chat {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.command-confirm {
+    background: rgba(30, 30, 30, 0.95); /* Dark semi-transparent */
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Strong floating shadow */
+    
+    width: 60vh;
+}
+
+.method {
+    font-size: medium;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 3vh;
+}
+
+
+/* Command Block Styled Like a Shell */
+.commandtorun {
+    background: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    white-space: pre-wrap;
+}
+
+/* Explanation Text */
+.explaination {
+    background: #222;
+    color: #bbb;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+/* Execute Button Styling */
+button {
+    background: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #005f7f;
+}
+
+
+/* .loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  } */
+  /* .loader {
+    margin-left: 8vh;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    animation: roll 1s ease-in-out infinite alternate;
+  }
+  .loader:after{
+    content:"";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 5px solid ;
+    border-color: #ff3d00 transparent;
+  }
+  @keyframes roll {
+    0% {
+      transform: translateX(-150%) rotate(0deg) ;
+    }
+    100% {
+      transform:  translateX(150%) rotate(360deg);
+    }
+  }
+*/
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  font-weight: bold;
+  font-size: large;
+  animation: l1 1s linear infinite alternate;
+  margin-top: 1vh;
+  padding: 0px;
+  margin-top:3vh ;
+  background-color: #333333; /* Dark gray for AI messages */
+  color: #ffffff;
+  align-self: flex-start; /* Align to the left */
+  padding: 8px 12px;
+  border-radius: 12px 12px 12px 0;
+  margin-right: 3vh;
+  max-width: max-content; /* Make background wrap around text */
+  font-size: 14px;
+  word-wrap: break-word;
+}
+.loader:before {
+  content:"Generating..."
+}
+@keyframes l1 {to{opacity: 0}}
+.hidden{
+    visibility: hidden;
+} 
