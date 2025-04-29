@@ -66,8 +66,7 @@ const generate = async (prompt) => {
                   1 )If your response includes any command-line instructions, they must be clearly formatted and visually separated from regular text.
                   2 )make sure no double quotes are present in the command replace them with single quote no matter what, give the command only in the proper console formating, do not specify the output in console format, do not give explaniotn in the command by adding a #
                   3) if the reponse inculdes an html code then do not produce it and refuse 
-                  4) these are the previous chat for context ${chat_history_for_context} make  sure to use it give response related to the input
-                  4 ) the specifics fo the user are os: ${getLinuxDistro()} / ${os.platform()} || make sure to stick to the platform unless use asks to do other wise
+                  4) the specifics fo the user are os: ${getLinuxDistro()} / ${os.platform()} || make sure to stick to the platform unless use asks to do other wise
                   5) this is the user prompt:=${prompt}
                   `
     const result = await geminiModel.generateContent(final_prompt);
